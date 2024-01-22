@@ -7,6 +7,6 @@
     "Version": "1.0.0",
     "Language": "csharp",
     "Website": "https://github.com/yu-xiaoyao/Flow.Launcher.Plugin.Ipconfig",
-    "IcoPath": "icon.png",
+    "IcoPath": "ipconfig-icon.png",
     "ExecuteFileName": "Flow.Launcher.Plugin.Ipconfig.dll"
 }

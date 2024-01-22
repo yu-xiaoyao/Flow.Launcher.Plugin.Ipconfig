@@ -22,7 +22,7 @@ namespace Flow.Launcher.Plugin.Ipconfig
             {
                 var result = new Result()
                 {
-                    IcoPath = "icon.png",
+                    IcoPath = "ipconfig-icon.png",
                     Title = attrs.Name,
                     SubTitle = attrs.IpAddress.ToString(),
                     Action = _ => CopyAddress(attrs.IpAddress),
@@ -51,7 +51,7 @@ namespace Flow.Launcher.Plugin.Ipconfig
 
             result.Add(new Result()
             {
-                IcoPath = "icon.png",
+                IcoPath = "ipconfig-icon.png",
                 Title = attrs.Name,
                 SubTitle = "Copy Ip Address",
                 Action = _ =>
@@ -66,7 +66,7 @@ namespace Flow.Launcher.Plugin.Ipconfig
             {
                 result.Add(new Result()
                 {
-                    IcoPath = "icon.png",
+                    IcoPath = "ipconfig-icon.png",
                     Title = "Gateway Ipv4 Address",
                     SubTitle = gatewayAddress.Ipv4,
                     Action = _ =>
@@ -81,7 +81,7 @@ namespace Flow.Launcher.Plugin.Ipconfig
             {
                 result.Add(new Result()
                 {
-                    IcoPath = "icon.png",
+                    IcoPath = "ipconfig-icon.png",
                     Title = "Ipv4 Address",
                     SubTitle = ipAddress.Ipv4,
                     Action = _ =>
@@ -94,7 +94,7 @@ namespace Flow.Launcher.Plugin.Ipconfig
 
             result.Add(new Result()
             {
-                IcoPath = "icon.png",
+                IcoPath = "ipconfig-icon.png",
                 Title = "Physical Address",
                 SubTitle = BitConverter.ToString(attrs.PhysicalAddress),
                 Action = _ =>
@@ -108,7 +108,7 @@ namespace Flow.Launcher.Plugin.Ipconfig
             {
                 result.Add(new Result()
                 {
-                    IcoPath = "icon.png",
+                    IcoPath = "ipconfig-icon.png",
                     Title = "Gateway Ipv6 Address",
                     SubTitle = gatewayAddress.Ipv6,
                     Action = _ =>
@@ -123,7 +123,7 @@ namespace Flow.Launcher.Plugin.Ipconfig
             {
                 result.Add(new Result()
                 {
-                    IcoPath = "icon.png",
+                    IcoPath = "ipconfig-icon.png",
                     Title = "Ipv6 Address",
                     SubTitle = ipAddress.Ipv6,
                     Action = _ =>

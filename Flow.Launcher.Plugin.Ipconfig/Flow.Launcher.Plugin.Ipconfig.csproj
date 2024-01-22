@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy /Y icon.png $(OutDir)icon.png" />
+    <Exec Command="copy /Y ipconfig-icon.png $(OutDir)ipconfig-icon.png" />
   </Target>
 
 </Project>
