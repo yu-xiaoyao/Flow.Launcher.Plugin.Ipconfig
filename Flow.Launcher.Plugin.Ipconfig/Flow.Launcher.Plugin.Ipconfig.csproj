@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
+	<UseWPF>true</UseWPF>
     <AssemblyName>Flow.Launcher.Plugin.Ipconfig</AssemblyName>
     <PackageId>Flow.Launcher.Plugin.Ipconfig</PackageId>
     <Authors>yu-xiaoyao</Authors>
@@ -20,10 +21,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="IpconfigPreviewPanel.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="plugin.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -32,6 +29,14 @@
   <ItemGroup>
     <PackageReference Include="Flow.Launcher.Plugin" Version="4.1.0" />
   </ItemGroup>
+
+	<ItemGroup>
+		<None Update="ipconfig-icon.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		
+	</ItemGroup>
+
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="copy /Y ipconfig-icon.png $(OutDir)ipconfig-icon.png" />

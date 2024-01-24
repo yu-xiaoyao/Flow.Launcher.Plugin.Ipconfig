@@ -27,7 +27,11 @@ namespace Flow.Launcher.Plugin.Ipconfig
                     SubTitle = attrs.IpAddress.ToString(),
                     Action = _ => CopyAddress(attrs.IpAddress),
                     PreviewPanel = new Lazy<UserControl>(() =>
-                        new IpconfigPreviewPanel(attrs, content => _context.API.CopyToClipboard(content))),
+                    {
+                        // _context.API.LogInfo("IpConfig", "PreviewPanel<><>");
+                        return new IpPreviewPanel(attrs, content => _context.API.CopyToClipboard(content));
+                        //   new IpconfigPreviewPanel(attrs, content => _context.API.CopyToClipboard(content))
+                    }),
                     ContextData = attrs
                 };
 

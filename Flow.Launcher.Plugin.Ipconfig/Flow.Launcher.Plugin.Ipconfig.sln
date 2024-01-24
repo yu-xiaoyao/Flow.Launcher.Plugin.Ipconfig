@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flow.Launcher.Plugin.Ipconfig", "Flow.Launcher.Plugin.Ipconfig.csproj", "{62247998-0478-4E85-B5D8-EA3AA7590F3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62247998-0478-4E85-B5D8-EA3AA7590F3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62247998-0478-4E85-B5D8-EA3AA7590F3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62247998-0478-4E85-B5D8-EA3AA7590F3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62247998-0478-4E85-B5D8-EA3AA7590F3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {764DD282-AA35-4E43-9180-822D0BBEA7CC}
+	EndGlobalSection
+EndGlobal
