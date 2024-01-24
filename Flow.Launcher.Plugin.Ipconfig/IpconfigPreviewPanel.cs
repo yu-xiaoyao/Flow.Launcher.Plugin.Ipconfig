@@ -17,10 +17,15 @@ public class IpconfigPreviewPanel : UserControl
     {
         _attrs = attrs;
         _clickFunc = clickFunc;
-        Loaded += On_Panel_Loaded;
+        // Loaded += On_Panel_Loaded;
+        AddIpconfigPanel();
     }
 
     private void On_Panel_Loaded(object sender, RoutedEventArgs e)
+    {
+    }
+
+    private void AddIpconfigPanel()
     {
         var basePanel = BuildStackPanel();
 

@@ -12,7 +12,7 @@ public class Main_Test
         var result = IpConfigUtil.GetNetworkInterfaces();
         foreach (var netAttrs in result)
         {
-            Console.WriteLine($"{netAttrs}");
+            Console.WriteLine($"result: {netAttrs}");
         }
     }
 }

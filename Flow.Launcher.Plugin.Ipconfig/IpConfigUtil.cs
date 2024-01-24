@@ -60,7 +60,7 @@ public class IpConfigUtil
                 continue;
             }
 
-            Console.WriteLine($"UP: {adapter.Id} - {adapter.Name}");
+            // Console.WriteLine($"UP: {adapter.Id} - {adapter.Name}");
 
             // if (netType == NetworkInterfaceType.Ethernet
             //     || netType == NetworkInterfaceType.Wireless80211
