@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+
+    <system:String x:Key="ipconfig_plugin_title">ipconfig plugin</system:String>
+    <system:String x:Key="ipconfig_plugin_description">quick show windows ipconfig information plugin</system:String>
+
+    
+    <system:String x:Key="ipconfig_plugin_copy_ip">Copy IP Address</system:String>
+    <system:String x:Key="ipconfig_plugin_gateway_ipv4_address">Gateway Ipv4 Address</system:String>
+    <system:String x:Key="ipconfig_plugin_ipv4_address">Ipv4 Address</system:String>
+    <system:String x:Key="ipconfig_plugin_physical_address">Physical Address</system:String>
+    <system:String x:Key="ipconfig_plugin_gateway_ipv6_address">Gateway Ipv6 Address</system:String>
+    <system:String x:Key="ipconfig_plugin_ipv6_address">Ipv6 Address</system:String>
+
+</ResourceDictionary>

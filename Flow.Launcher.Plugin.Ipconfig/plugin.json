@@ -1,12 +1,12 @@
 {
-    "ID": "5974B306EAC44D55984973D568E6CD7D",
-    "ActionKeyword": "ipconfig",
-    "Name": "Windows Ipconfig Command",
-    "Description": "a plugin for windows ipconfig",
-    "Author": "yu-xiaoyao",
-    "Version": "1.0.0",
-    "Language": "csharp",
-    "Website": "https://github.com/yu-xiaoyao/Flow.Launcher.Plugin.Ipconfig",
-    "IcoPath": "ipconfig-icon.png",
-    "ExecuteFileName": "Flow.Launcher.Plugin.Ipconfig.dll"
+  "ID": "5974B306EAC44D55984973D568E6CD7D",
+  "ActionKeyword": "ipconfig",
+  "Name": "Windows Ipconfig Command Plugin",
+  "Description": "quick show windows ipconfig information plugin",
+  "Author": "yu-xiaoyao",
+  "Version": "1.2.0",
+  "Language": "csharp",
+  "Website": "https://github.com/yu-xiaoyao/Flow.Launcher.Plugin.Ipconfig",
+  "IcoPath": "Images\\IpconfigIcon.png",
+  "ExecuteFileName": "Flow.Launcher.Plugin.Ipconfig.dll"
 }

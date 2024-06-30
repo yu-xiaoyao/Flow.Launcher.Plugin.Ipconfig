@@ -4,8 +4,10 @@ using System.Windows.Controls;
 
 namespace Flow.Launcher.Plugin.Ipconfig
 {
-    public class Ipconfig : IPlugin, IContextMenu
+    public class Ipconfig : IPlugin, IContextMenu, IPluginI18n
     {
+        public const string IconPath = "Images\\IpconfigIcon.png";
+
         private PluginInitContext _context;
 
         public void Init(PluginInitContext context)
@@ -15,22 +17,29 @@ namespace Flow.Launcher.Plugin.Ipconfig
 
         public List<Result> Query(Query query)
         {
-            var resultList = new List<Result>();
             var interfaces = IpConfigUtil.GetNetworkInterfaces();
+            var search = query.Search;
 
+
+            var resultList = new List<Result>();
             foreach (var attrs in interfaces)
             {
-                var result = new Result()
+                if (!string.IsNullOrEmpty(search))
                 {
-                    IcoPath = "ipconfig-icon.png",
+                    if (!IsMatch(search, attrs.Name))
+                        continue;
+                }
+
+                var result = new Result
+                {
+                    IcoPath = IconPath,
                     Title = attrs.Name,
                     SubTitle = attrs.IpAddress.ToString(),
                     Action = _ => CopyAddress(attrs.IpAddress),
+                    AutoCompleteText = $"{query.ActionKeyword} {attrs.Name}",
                     PreviewPanel = new Lazy<UserControl>(() =>
                     {
-                        // _context.API.LogInfo("IpConfig", "PreviewPanel<><>");
                         return new IpPreviewPanel(attrs, content => _context.API.CopyToClipboard(content));
-                        //   new IpconfigPreviewPanel(attrs, content => _context.API.CopyToClipboard(content))
                     }),
                     ContextData = attrs
                 };
@@ -39,6 +48,12 @@ namespace Flow.Launcher.Plugin.Ipconfig
             }
 
             return resultList;
+        }
+
+        private static bool IsMatch(string searchKey, string name)
+        {
+            return string.Equals(searchKey, name, StringComparison.OrdinalIgnoreCase) ||
+                   name.StartsWith(searchKey, StringComparison.OrdinalIgnoreCase);
         }
 
         public List<Result> LoadContextMenus(Result selectedResult)
@@ -55,9 +70,9 @@ namespace Flow.Launcher.Plugin.Ipconfig
 
             result.Add(new Result()
             {
-                IcoPath = "ipconfig-icon.png",
+                IcoPath = IconPath,
                 Title = attrs.Name,
-                SubTitle = "Copy Ip Address",
+                SubTitle = _context.API.GetTranslation("ipconfig_plugin_copy_ip"),
                 Action = _ =>
                 {
                     _context.API.CopyToClipboard(attrs.CopyIpString());
@@ -70,8 +85,8 @@ namespace Flow.Launcher.Plugin.Ipconfig
             {
                 result.Add(new Result()
                 {
-                    IcoPath = "ipconfig-icon.png",
-                    Title = "Gateway Ipv4 Address",
+                    IcoPath = IconPath,
+                    Title = _context.API.GetTranslation("ipconfig_plugin_gateway_ipv4_address"),
                     SubTitle = gatewayAddress.Ipv4,
                     Action = _ =>
                     {
@@ -85,8 +100,8 @@ namespace Flow.Launcher.Plugin.Ipconfig
             {
                 result.Add(new Result()
                 {
-                    IcoPath = "ipconfig-icon.png",
-                    Title = "Ipv4 Address",
+                    IcoPath = IconPath,
+                    Title = _context.API.GetTranslation("ipconfig_plugin_ipv4_address"),
                     SubTitle = ipAddress.Ipv4,
                     Action = _ =>
                     {
@@ -98,8 +113,8 @@ namespace Flow.Launcher.Plugin.Ipconfig
 
             result.Add(new Result()
             {
-                IcoPath = "ipconfig-icon.png",
-                Title = "Physical Address",
+                IcoPath = IconPath,
+                Title = _context.API.GetTranslation("ipconfig_plugin_physical_address"),
                 SubTitle = BitConverter.ToString(attrs.PhysicalAddress),
                 Action = _ =>
                 {
@@ -112,8 +127,8 @@ namespace Flow.Launcher.Plugin.Ipconfig
             {
                 result.Add(new Result()
                 {
-                    IcoPath = "ipconfig-icon.png",
-                    Title = "Gateway Ipv6 Address",
+                    IcoPath = IconPath,
+                    Title = _context.API.GetTranslation("ipconfig_plugin_gateway_ipv6_address"),
                     SubTitle = gatewayAddress.Ipv6,
                     Action = _ =>
                     {
@@ -127,8 +142,8 @@ namespace Flow.Launcher.Plugin.Ipconfig
             {
                 result.Add(new Result()
                 {
-                    IcoPath = "ipconfig-icon.png",
-                    Title = "Ipv6 Address",
+                    IcoPath = IconPath,
+                    Title = _context.API.GetTranslation("ipconfig_plugin_ipv6_address"),
                     SubTitle = ipAddress.Ipv6,
                     Action = _ =>
                     {
@@ -153,6 +168,16 @@ namespace Flow.Launcher.Plugin.Ipconfig
             }
 
             return true;
+        }
+
+        public string GetTranslatedPluginTitle()
+        {
+            return _context.API.GetTranslation("ipconfig_plugin_title");
+        }
+
+        public string GetTranslatedPluginDescription()
+        {
+            return _context.API.GetTranslation("ipconfig_plugin_description");
         }
     }
 }

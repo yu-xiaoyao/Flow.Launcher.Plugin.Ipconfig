@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="ipconfig_plugin_title">ipconfig 插件</system:String>
+    <system:String x:Key="ipconfig_plugin_description">快速显示 windows ipconfig 信息插件</system:String>
+
+
+    <system:String x:Key="ipconfig_plugin_copy_ip">复制 IP 地址</system:String>
+    <system:String x:Key="ipconfig_plugin_gateway_ipv4_address">网关 Ipv4 地址</system:String>
+    <system:String x:Key="ipconfig_plugin_ipv4_address">Ipv4 地址</system:String>
+    <system:String x:Key="ipconfig_plugin_physical_address">物理地址</system:String>
+    <system:String x:Key="ipconfig_plugin_gateway_ipv6_address">网关 Ipv6 地址</system:String>
+    <system:String x:Key="ipconfig_plugin_ipv6_address">Ipv6 地址</system:String>
+
+</ResourceDictionary>
